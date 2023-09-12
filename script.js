@@ -7,15 +7,17 @@ function calcular(){
   var resultado_final = resultado.toFixed(1);
 
   if(resultado_final <= 18.5){
-    texto.innerHTML = "Abaixo do peso normal : " + resultado_final;
+    texto.innerHTML = "Abaixo do peso normal : " + "IMC: " + resultado_final;
   }else if(resultado_final >= 18.5 && resultado_final <= 24.9){
-    texto.innerHTML = "Peso ideal : " + resultado_final;
+    texto.innerHTML = "Peso normal : " + "IMC: " + resultado_final;
   }else if(resultado_final >= 25 && resultado_final <= 29.9){
-    texto.innerHTML = "Excesso de peso : " + resultado_final;
+    texto.innerHTML = "Excesso de peso : " + "IMC: " + resultado_final;
+  }else if(resultado_final >= 30 && resultado_final <= 34.9){
+    texto.innerHTML = "Obesidade classe 1 : " + "IMC: " +  resultado_final;
+  }else if(resultado_final >= 35 && resultado_final <= 39.9){
+    texto.innerHTML = "Obesidade classe 2 : " + "IMC: " + resultado_final;
   }else{
-    texto.innerHTML = "Obesidade procure um médico";
+    texto.innerHTML = "Obesidade classe 3: " + "IMC: " + resultado_final;
   }
-
-
-
+  document.getElementById('oms').innerHTML = "Classificação segundo a OMS a partir do IMC";
 }
